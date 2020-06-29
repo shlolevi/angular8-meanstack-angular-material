@@ -84,7 +84,7 @@ export class AddStudentComponent implements OnInit {
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
     return this.studentForm.controls[controlName].hasError(errorName);
-  };
+  }
 
   /* Submit book */
   submitStudentForm() {
