@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 // Setting up static directory
-app.use(express.static(path.join(__dirname, 'dist/angular8-meanstack-angular-material')));
+app.use(express.static(path.join(__dirname, '../dist/angular8-meanstack-angular-material')));
 
 
 // RESTful API root
@@ -46,17 +46,17 @@ app.listen(port, () => {
 })
 
 // Find 404 and hand over to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
+// app.use((req, res, next) => {
+//   next(createError(404));
+// });
 
 // Index Route
-app.get('/', (req, res) => {
-  res.send('invaild endpoint');
-});
+// app.get('/', (req, res) => {
+//   res.send('invaild endpoint');
+// });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/angular8-meanstack-angular-material/index.html'));
+  res.sendFile(path.join(__dirname, '../dist/angular8-meanstack-angular-material/index.html'));
 });
 
 // error handler
