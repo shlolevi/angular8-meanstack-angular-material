@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 let express = require('express'),
   path = require('path'),
   mongoose = require('mongoose'),
@@ -6,8 +8,10 @@ let express = require('express'),
   dataBaseConfig = require('./database/db');
 
 // Connecting mongoDB
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/angular8mean');
 mongoose.Promise = global.Promise;
-mongoose.connect(dataBaseConfig.db, {
+// mongoose.connect(dataBaseConfig.db, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/angular8mean', {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
