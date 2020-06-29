@@ -8,10 +8,8 @@ let express = require('express'),
   dataBaseConfig = require('./database/db');
 
 // Connecting mongoDB
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/angular8mean');
 mongoose.Promise = global.Promise;
-// mongoose.connect(dataBaseConfig.db, {
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/angular8mean', {
+mongoose.connect(process.env.MONGODB_URI || dataBaseConfig.db, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
